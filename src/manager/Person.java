@@ -1,5 +1,9 @@
 package manager;
 
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class Person {
 	private String firstName, lastName, entreprise;
 	private float baseSalary;
@@ -50,6 +54,29 @@ public class Person {
 
 	public void display() {
 
+	}
+
+	public boolean demandeAbsence(LocalDate dateDebut,int dure,String message,Interim interim){
+		if(new ArrayList<String>(Arrays.asList(message.split(" "))).contains("maladie")){
+			return true;
+		}
+		if(new ArrayList<String>(Arrays.asList(message.split(" "))).contains("congé")){
+			if( dure <=2){
+				return true;
+			}else{
+				if(interim != null && interim.isDispo()){
+					return true;
+				}else{
+					return false;
+				}
+			}
+		}
+		if(message ==""){
+			return false;
+		}
+		else{
+			return false;
+		}
 	}
 
 }
