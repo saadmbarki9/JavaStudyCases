@@ -1,5 +1,6 @@
 package manager;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class TestEntreprise {
@@ -58,7 +59,9 @@ public class TestEntreprise {
 //		method payroll
 		System.out.println("----");
 		System.out.println(payroll(staff));
+		System.out.println(m1.demandeAbsence(LocalDate.of(2018,04,01),2,"je souhaite m’absenter pour cause de maladie",null));
 
 	}
+
 
 }
